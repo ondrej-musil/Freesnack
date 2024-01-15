@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Page</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prague Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 400px;
+      }
+    </style>
+
+    <title>Black Background</title>
+    <style>
+      body {
+        background-color: black;
+        color: white; /* Set text color to white for better visibility on a black background */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+    <script>
+      // Initialize the map
+      var map = L.map("map").setView([50.0755, 14.4378], 13);
+
+      // Add a tile layer to the map
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      // Add a marker to the map
+      var marker = L.marker([50.0755, 14.4378]).addTo(map);
+      marker
+        .bindPopup("<b>Třešeň</b><br>Capital of the Czech Republic.")
+        .openPopup();
+    </script>
+
+    <!-- Content for the second page -->
+    <h1>Třešeň</h1>
+    <p>Vinohrady, Španělská 12</p>
+    <p>zraje září, říjen</p>
+
+    <!-- Link back to the main page -->
+    <a href="Freesnack.html">Go to Main Page</a>
+  </body>
+</html>
