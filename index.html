@@ -14,38 +14,116 @@
       img {
         width: 100px;
         height: 100px;
-        float: left;
         margin-right: 10px;
         object-fit: cover;
         border-radius: 50px;
       }
     </style>
+
+    <title>Black Background</title>
+    <style>
+      body {
+        background-color: black;
+        color: white; /* Set text color to white for better visibility on a black background */
+      }
+    </style>
+
+    <title>Centered Layout</title>
+    <style>
+      body,
+      html {
+        margin: 0px;
+        padding: 0;
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; /* Stack children vertically */
+        text-align: center; /* Center-align text for all children */
+        font-family: Helvetica, sans-serif;
+        font-weight: 900;
+        font-size: 1em;
+      }
+    </style>
+
+    <title>Text Alignment</title>
+    <link rel="stylesheet" href="left_and_right.css" />
+
+    <title>Spacing Between Rows</title>
+    <link rel="stylesheet" href="row.css" />
+
+    <title>Stylized H1</title>
+    <link rel="stylesheet" href="h1.css" />
   </head>
   <body>
-    <h1>Nejbližší ovocné stromy v Praze</h1>
-    <p class="username">
-      Zelná = zralé, oranžová = nahnilé, šedá = nezralé, červená =
-    </p>
-    <img src="images/Třešeň.webp" />
-    <p>Třešeň</p>
-    <p>Španělská 12</p>
+    <h1>nejbližší ovoce</h1>
 
-    <img src="images/jabloň.jpg" />
-    <p>jabloň</p>
-    <p>Nad Stanicí</p>
+    <title>Image and Text Alignment</title>
+    <style>
+      .image-container {
+        display: flex;
+        align-items: center;
+      }
 
-    <img src="images/Moruše.jpg" />
-    <p>moruše</p>
-    <p>Jelení 196/15</p>
+      .image-container img {
+        margin-right: 10px; /* Adjust the margin as needed */
+      }
+    </style>
 
-    <img src="images/Sad jabloní.jpg" />
-    <p>Sad jabloní</p>
-    <p>Hellichova 535/22</p>
+    <title>Orange Circle</title>
+    <style>
+      .orange-circle {
+        width: 20px; /* Size of the circle */
+        height: 20px; /* Size of the circle */
+        background-color: orange;
+        border-radius: 50%; /* Creates the circle shape */
+        margin-right: 10px;
+      }
+    </style>
 
-    <img src="images/Meruňka.jpg" />
-    <p>Meruňka</p>
-    <p>Hellichova 535/22</p>
+    <title>Hyperlink without Underline and Color Change</title>
+    <style>
+      .no-underline {
+        text-decoration: none; /* Removes underline */
+        color: inherit; /* Inherits the color from the parent element */
+      }
 
-    <video controls="true" src="videos/Typo_Ahoj_animace_Kamil_DC.avi"></video>
+      /* Optional: Styles for hovering over the link */
+      .no-underline:hover,
+      .no-underline:focus {
+        text-decoration: none; /* Keeps the link without underline on hover */
+        color: inherit; /* Keeps the same color on hover */
+      }
+    </style>
+
+    <div class="image-container">
+      <div class="orange-circle"></div>
+      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <div class="text-right">463 m</div>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="image-container">
+      <div class="orange-circle"></div>
+      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <div class="text-right">463 m</div>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="image-container">
+      <div class="orange-circle"></div>
+      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <div class="text-right">463 m</div>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="image-container">
+      <div class="orange-circle"></div>
+      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <div class="text-right">463 m</div>
+    </div>
   </body>
 </html>
