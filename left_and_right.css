@@ -1,0 +1,14 @@
+.text-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-left {margin-right: 100px;
+    /* Optional styling for left text */
+}
+
+.text-right {
+    margin-left:100px;
+    /* Optional styling for right text */
+}

@@ -1,0 +1,10 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    margin-bottom: 20px; /* You can adjust this value to control the spacing */
+    padding: 10px; /* Optional padding */
+    border: 0px solid #ccc; /* Optional border for visualization */
+}
