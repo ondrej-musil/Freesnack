@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second Page</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prague Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+      #map {
+        height: 700px;
+        width: 960px;
+      }
+    </style>
+
+    <title>Black Background</title>
+    <style>
+      body {
+        background-color: black;
+        color: white; /* Set text color to white for better visibility on a black background */
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 900;
+      }
+    </style>
+    <title>Mapa a Obrázek</title>
+    <style>
+      .container {
+        display: flex; /* Použití Flexboxu */
+      }
+
+      .image {
+        flex: 1; /* Oba prvky mají stejnou velikost */
+      }
+
+      .image {
+        /* Styly pro obrázek */
+        max-width: 50%; /* Zajišťuje, že obrázek bude responzivní */
+        height: 256px;
+      }
+    </style>
+    <title>Šipka pro návrat na hlavní stránku</title>
+    <style>
+      .arrow {
+        display: inline-block;
+        margin: 20px;
+        width: 30px;
+        height: 30px;
+        background-color: hsl(0, 0%, 0%);
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        text-align: center;
+        line-height: 40px;
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
+      }
+    </style>
+    <title>Grey Circle</title>
+    <style>
+      .grey-circle {
+        width: 20px; /* Size of the circle */
+        height: 20px; /* Size of the circle */
+        background-color: rgb(150, 150, 150);
+        border-radius: 50%; /* Creates the circle shape */
+        margin-right: 10px;
+      }
+    </style>
+    <title>Flexbox Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a href="Freesnack.html" class="arrow" title="Návrat na hlavní stránku"
+      >&#8592;
+    </a>
+
+    <div class="container">
+      <div id="map">
+        <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+        <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
+        <script src="https://unpkg.com/leaflet-routing-machine/dist/leaflet-routing-machine.js"></script>
+
+        <script>
+          // Initialize the map
+          var map = L.map("map").setView([50.1048259, 14.3887451], 13);
+
+          // Add a tile layer to the map
+          L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            attribution: "&copy; OpenStreetMap contributors",
+          }).addTo(map);
+
+          // Add a marker to the map
+          var marker = L.marker([50.1048259, 14.3887451]).addTo(map);
+          marker
+            .bindPopup("<b>Třešeň</b><br>Capital of the Czech Republic.")
+            .openPopup();
+        </script>
+      </div>
+      <div class="image">
+        <img
+          src="/images/Myrobalán_NTK.jpg"
+          alt="bobule myrobalánu na stromě"
+        />
+      </div>
+    </div>
+
+    <!-- Content for the second page -->
+    <h1>Myrobalán</h1>
+    <p>Park I. Gándhíové</p>
+    <div class="grey-circle"></div>
+    <p>zraje srpen, září</p>
+
+    <!-- Link back to the main page -->
+    <a href="Freesnack.html">&#8592; Go to Main Page</a>
+  </body>
+</html>
