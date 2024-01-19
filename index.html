@@ -56,7 +56,7 @@
     <link rel="stylesheet" href="h1.css" />
   </head>
   <body>
-    <h1>nejbližší ovoce</h1>
+    <h1>nejbližší snack</h1>
 
     <title>Image and Text Alignment</title>
     <style>
@@ -81,6 +81,17 @@
       }
     </style>
 
+    <title>Grey Circle</title>
+    <style>
+      .grey-circle {
+        width: 20px; /* Size of the circle */
+        height: 20px; /* Size of the circle */
+        background-color: rgb(150, 150, 150);
+        border-radius: 50%; /* Creates the circle shape */
+        margin-right: 10px;
+      }
+    </style>
+
     <title>Hyperlink without Underline and Color Change</title>
     <style>
       .no-underline {
@@ -97,8 +108,93 @@
     </style>
 
     <div class="image-container">
+      <div class="grey-circle"></div>
+      <a href="1_myrobalán_NTK.html" class="no-underline">myrobalán</a>
+      <div class="text-right">
+        <p><span id="distance">Načítání...</span> km</p>
+
+        <script>
+          const fixedLatitude = 50.1048259; // Zeměpisná šířka Prahy
+          const fixedLongitude = 14.3887451; // Zeměpisná délka Prahy
+
+          function updateDistance() {
+            if (navigator.geolocation) {
+              navigator.geolocation.watchPosition(showDistance, showError, {
+                enableHighAccuracy: true,
+                timeout: 5000,
+                maximumAge: 0,
+              });
+            } else {
+              document.getElementById("distance").innerHTML =
+                "Geolokace není podporována tímto prohlížečem.";
+            }
+          }
+
+          function showDistance(position) {
+            const userLatitude = position.coords.latitude;
+            const userLongitude = position.coords.longitude;
+            const distance = calculateDistance(
+              userLatitude,
+              userLongitude,
+              fixedLatitude,
+              fixedLongitude
+            );
+            document.getElementById("distance").innerHTML = distance.toFixed(2);
+          }
+
+          function calculateDistance(lat1, lon1, lat2, lon2) {
+            const R = 6371; // Poloměr Země v km
+            const dLat = degreesToRadians(lat2 - lat1);
+            const dLon = degreesToRadians(lon2 - lon1);
+            lat1 = degreesToRadians(lat1);
+            lat2 = degreesToRadians(lat2);
+
+            const a =
+              Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+              Math.cos(lat1) *
+                Math.cos(lat2) *
+                Math.sin(dLon / 2) *
+                Math.sin(dLon / 2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+            return R * c;
+          }
+
+          function degreesToRadians(degrees) {
+            return degrees * (Math.PI / 180);
+          }
+
+          function showError(error) {
+            switch (error.code) {
+              case error.PERMISSION_DENIED:
+                document.getElementById("distance").innerHTML =
+                  "Uživatel odmítl požadavek na geolokaci.";
+                break;
+              case error.POSITION_UNAVAILABLE:
+                document.getElementById("distance").innerHTML =
+                  "Informace o poloze nejsou dostupné.";
+                break;
+              case error.TIMEOUT:
+                document.getElementById("distance").innerHTML =
+                  "Vypršel časový limit požadavku na získání polohy.";
+                break;
+              case error.UNKNOWN_ERROR:
+                document.getElementById("distance").innerHTML =
+                  "Došlo k neznámé chybě.";
+                break;
+            }
+          }
+
+          // Spustí sledování polohy
+          updateDistance();
+        </script>
+      </div>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="image-container">
       <div class="orange-circle"></div>
-      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <a href="jabloň_další_strana.html" class="no-underline">jabloň</a>
       <div class="text-right">463 m</div>
     </div>
 
@@ -106,7 +202,7 @@
 
     <div class="image-container">
       <div class="orange-circle"></div>
-      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <a href="moruše_další_strana.html" class="no-underline">moruše</a>
       <div class="text-right">463 m</div>
     </div>
 
@@ -114,15 +210,7 @@
 
     <div class="image-container">
       <div class="orange-circle"></div>
-      <a href="second_page.html" class="no-underline">Třešeň</a>
-      <div class="text-right">463 m</div>
-    </div>
-
-    <div class="row"></div>
-
-    <div class="image-container">
-      <div class="orange-circle"></div>
-      <a href="second_page.html" class="no-underline">Třešeň</a>
+      <a href="meruňka_další_strana.html" class="no-underline">meruňka </a>
       <div class="text-right">463 m</div>
     </div>
   </body>
